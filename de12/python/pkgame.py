@@ -3,7 +3,6 @@ name=input("プレイヤー名を入れてください")
 print(name,"さんはキッカーです。")
 point=0
 
-
 for i in range(1,6):
     print(i,"回目")
     print("１．右　２．真ん中　３．左")
