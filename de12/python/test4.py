@@ -1,14 +1,5 @@
 import openpyxl
 
-#新しいワークブックを作成
-wb = openpyxl.Workbook()
-#ワークブック内のアクティブなシートを取得
-ws = wb.active
-#ワークブックを名前をつけて保存
-wb.save("家計簿リスト２.xlsx")
-
-import openpyxl
-
 wb = openpyxl.load_workbook('家計簿リスト２.xlsx')
 ws = wb.active
 
@@ -32,11 +23,6 @@ for i in range(0,len(day)):
 
 select=input("書き足しますか？yes or no")
 while select =="yes":
-    import openpyxl
-    wb = openpyxl.load_workbook('家計簿リスト２.xlsx')
-    ws = wb.active
-
-
     #配列宣言
     day = [input('日付')]
     item = [input('品目')]
@@ -62,7 +48,7 @@ while select =="yes":
                 ws.cell(i+1,j+1,value = item[Q])
                 ws.cell(i+1,j+2,value = money[Q])
                 i = i + 1
-        
+    select=input("書き足しますか？yes or no")
+       
         #保存        
-            wb.save('家計簿リスト２.xlsx')
-            select=input("書き足しますか？yes or no")
+wb.save('家計簿リスト２.xlsx')
